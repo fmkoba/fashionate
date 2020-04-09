@@ -1,21 +1,55 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query PostsQuery {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              date
+              path
+              title
+              tags
+              image {
+                absolutePath
+                childImageSharp {
+                  fluid(maxWidth : 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            html
+            id
+          }
+        }
+      }
+    }
+  `);
+  console.log(data.allMarkdownRemark.edges);
+
+  return <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+
+    {
+      data.allMarkdownRemark.edges.map((item) => {
+        const { title, date, path, image } = item.node.frontmatter;
+        return (
+          <Link key={item.node.id} to={path}>
+          <Img fluid={image.childImageSharp.fluid} alt="test"/>
+            <h2>{title}</h2>
+            <span>{date}</span>
+          </Link>
+        )
+      })
+    }
   </Layout>
-)
+}
 
 export default IndexPage
