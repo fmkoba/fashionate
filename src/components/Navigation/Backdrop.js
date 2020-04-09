@@ -5,7 +5,8 @@ import './Backdrop.scss';
 
 const Backdrop = props => {
   return ReactDOM.createPortal(
-    <div
+
+    <div // eslint-disable-line jsx-a11y/click-events-have-key-events
       tabIndex="0"
       role="button"
       className="backdrop"
