@@ -34,22 +34,27 @@ const IndexPage = () => {
   `);
   console.log(data.allMarkdownRemark.edges);
 
-  return <Layout>
-    <SEO title="Home" />
+  return (
+    <>
+      <div id="drawer-hook"></div>
+      <Layout>
+        <SEO title="Home" />
 
-    {
-      data.allMarkdownRemark.edges.map((item) => {
-        const { title, date, path, image } = item.node.frontmatter;
-        return (
-          <Link key={item.node.id} to={path}>
-          <Img fluid={image.childImageSharp.fluid} alt="test"/>
-            <h2>{title}</h2>
-            <span>{date}</span>
-          </Link>
-        )
-      })
-    }
-  </Layout>
+        {
+          data.allMarkdownRemark.edges.map((item) => {
+            const { title, date, path, image } = item.node.frontmatter;
+            return (
+              <Link key={item.node.id} to={path}>
+              <Img fluid={image.childImageSharp.fluid} alt="test"/>
+                <h2>{title}</h2>
+                <span>{date}</span>
+              </Link>
+            )
+          })
+        }
+      </Layout>
+    </>
+  )
 }
 
 export default IndexPage
