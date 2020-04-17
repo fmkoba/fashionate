@@ -1,14 +1,15 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+// import MainSection from '../components/Home/MainSection';
+import Nameless from '../components/Home/Nameless';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query PostsQuery {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             frontmatter {
@@ -19,7 +20,10 @@ const IndexPage = () => {
               image {
                 absolutePath
                 childImageSharp {
-                  fluid(maxWidth : 800) {
+                  fixed(width : 700, height: 350 ) {
+                    ...GatsbyImageSharpFixed
+                  }
+                  fluid {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -32,26 +36,14 @@ const IndexPage = () => {
       }
     }
   `);
-  console.log(data.allMarkdownRemark.edges);
 
   return (
     <>
       <div id="drawer-hook"></div>
       <Layout>
         <SEO title="Home" />
-
-        {
-          data.allMarkdownRemark.edges.map((item) => {
-            const { title, date, path, image } = item.node.frontmatter;
-            return (
-              <Link key={item.node.id} to={path}>
-              <Img fluid={image.childImageSharp.fluid} alt="test"/>
-                <h2>{title}</h2>
-                <span>{date}</span>
-              </Link>
-            )
-          })
-        }
+        {/* <MainSection posts={data.allMarkdownRemark.edges}/> */}
+        <Nameless posts={data.allMarkdownRemark.edges}/>
       </Layout>
     </>
   )
