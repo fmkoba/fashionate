@@ -1,6 +1,6 @@
 ---
 path: "/blog/vogue"
-date: "2020-05-04"
+date: "2020-05-03"
 title: "A história da revista Vogue"
 tags: ['#moda', '#FashionBusiness', '#digital', '#marketingdigital']
 image: 'vogue.jpg'

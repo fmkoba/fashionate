@@ -1,15 +1,15 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import MainSection from '../components/Home/MainSection';
+// import MainSection from '../components/Home/MainSection';
+import Nameless from '../components/Home/Nameless';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query PostsQuery {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             frontmatter {
@@ -20,7 +20,10 @@ const IndexPage = () => {
               image {
                 absolutePath
                 childImageSharp {
-                  fluid(maxWidth : 800) {
+                  fixed(width : 700, height: 350 ) {
+                    ...GatsbyImageSharpFixed
+                  }
+                  fluid {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -39,7 +42,8 @@ const IndexPage = () => {
       <div id="drawer-hook"></div>
       <Layout>
         <SEO title="Home" />
-        <MainSection posts={data.allMarkdownRemark.edges}/>
+        {/* <MainSection posts={data.allMarkdownRemark.edges}/> */}
+        <Nameless posts={data.allMarkdownRemark.edges}/>
       </Layout>
     </>
   )

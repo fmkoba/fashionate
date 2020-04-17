@@ -4,20 +4,41 @@
   width: 50%;
   padding: 2rem;
 
-  a {
-    position: relative;
+}
+
+.post__link {
+  position: relative;
+  display: flex;
+  text-decoration: unset;
+
+  .post-title {
+    position: unset;
   }
 }
 
 .post-title {
   position: absolute;
-  top: auto;
-  left: auto;
   bottom: 0;
-  right: 0;
-  font-family: $heading-font;
+  right: 4rem;
+  padding-top: 1.5rem;
+  font-family: $body-font;
   text-decoration: none;
-  background-color: $black;
-  color: $pink;
-  padding: .5rem 1rem;
+  background-color: $pink;
+  color: $white;
+  padding: 2rem 1rem;
+  max-width: 9rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-style: italic;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .post-title {
+    font-size: .9rem;
+    padding: 1rem .5rem;
+    max-width: unset;
+  }
 }

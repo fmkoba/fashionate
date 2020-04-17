@@ -1,9 +1,9 @@
 ---
 path: "/blog/chanel"
-date: "2019-05-04"
+date: "2020-05-04"
 title: "Aprenda a vencer em tempos de crise"
 tags: ['#FashionBusiness', '#NegociodaModa', '#Estratégia', '#MarketingModa', '#FashionMarketing', '#moda', '#empreendedora']
-image: 'chanel.jpg'
+image: 'chanel2.jpg'
 ---
 
 Uma das mais conhecidas estilistas de todos os tempos, Coco Chanel é também uma grande fonte de inspiração quando se trata de trajetória de carreira principalmente em um cenário de crise mundial.

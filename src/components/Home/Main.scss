@@ -6,3 +6,66 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
+
+.nameless {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nameless__main-post {
+  width: 60%;
+
+  a {
+    display: block;
+    position: relative;
+  }
+}
+.nameless__side-posts {
+  width: 40%;
+}
+
+.nameless__post {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+
+  .post__link {
+    height: 100%;
+  }
+}
+
+.nameless__post-image {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .nameless__main-post ,
+  .nameless__side-posts {
+    width: 100%;
+  }
+
+  .nameless__side-posts {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 1rem 0;
+  }
+
+  .nameless__post {
+    margin: auto;
+    padding: 1.5rem 0;
+  }
+
+  .nameless__side-posts .nameless__post {
+    width: 100%;
+    height: 12em;
+    padding: 0;
+  }
+  .post__link-img-wrapper {
+    width: 250px !important;
+  }
+}

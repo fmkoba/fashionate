@@ -2,19 +2,21 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from "../components/seo"
+import Img from 'gatsby-image';
 
 export default function Template({
   data,
 }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  console.log(markdownRemark);
+console.log(frontmatter);
 
   return (
     <Layout>
       <SEO title={frontmatter.title}/>
 
-      <div className="blog-post-container">
+      <div className="blog-post-container container">
+        <Img fixed={frontmatter.image.childImageSharp.fixed} alt="test"/>
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
@@ -39,8 +41,8 @@ export const pageQuery = graphql`
         image {
           absolutePath
           childImageSharp {
-            fluid(maxWidth : 800) {
-              ...GatsbyImageSharpFluid
+            fixed(width : 800) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

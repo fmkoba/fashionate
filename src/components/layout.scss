@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&family=Muli:wght@200;300;800&display=swap');
 @import 'variables';
 
 html {
@@ -253,6 +253,9 @@ header {
 
 .footer {
   background-color: $pink;
+  font-family: $heading-font;
+  color: $white;
+  text-align: center;
 }
 
 .footer-container {
