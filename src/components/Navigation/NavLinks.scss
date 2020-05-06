@@ -14,11 +14,14 @@
 
 .nav-links li {
   margin: 1rem;
+
+  img {
+    max-width: 50px;
+    margin-top: 7px;
+  }
 }
 
 .nav-links a {
-  border: 1px solid transparent;
-  color: #292929;
   text-decoration: none;
   padding: 0.5rem;
   transition: all ease-in .2s;
@@ -28,8 +31,8 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  border-color: $black;
-  color: #292929;
+  border-color: $white;
+  color: $white;
 }
 
 .nav-links button {

@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
-
 import Header from '../Header';
 import NavLinks from './NavLinks';
 import SideDrawer from './SideDrawer';
@@ -32,9 +30,6 @@ const MainNavigation = props => {
           <span/>
           <span/>
         </button>
-        <h1 className="main-navigation__title">
-          <Link to="/">Fashionate</Link>
-        </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks/>
         </nav>
