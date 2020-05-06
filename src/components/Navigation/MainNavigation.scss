@@ -54,9 +54,22 @@
 
 .main-navigation__drawer-nav {
   height: 100%;
+  color: $black;
+
+  .nav-links a {
+    color: $black;
+    font-size: 1.5rem;
+  }
+}
+
+.main-navigation__menu-logo {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
+  .main-navigation__menu-logo,
   .main-navigation__menu-btn {
     display: none;
   }

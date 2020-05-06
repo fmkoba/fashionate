@@ -10,8 +10,8 @@ const IndexPage = () => {
     <>
       <div id="drawer-hook"></div>
       <Layout>
-        <SEO title="Home" />
-        <MainSection/>
+        <SEO title="Fashionate - Home" />
+        <MainSection className="home"/>
       </Layout>
     </>
   )
