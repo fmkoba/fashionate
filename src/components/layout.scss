@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko&family=Muli:wght@200;300;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&family=Muli:wght@200;300;800&display=swap&family=Playfair+Display:ital@0;1&display=swap');
+
 @import 'variables';
 
 html {
@@ -214,12 +215,16 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
 header {
   color: $white;
   font-family: 'Muli', sans-serif;
 }
 
-
+.fancy-font {
+  font-family: $fancy-font;
+  font-style: italic;
+}
 .slide-in-left-enter {
   transform: translateX(-100%);
 }
@@ -260,6 +265,7 @@ header {
   color: $white;
   background-color: $pink;
   padding: .2rem 1.5rem;
+  font-size: 1.2rem;
 }
 
 .footer {

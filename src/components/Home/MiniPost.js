@@ -9,7 +9,7 @@ const MiniPost = ({ post }) => (
       style={{ backgroundImage: `url(${post.frontmatter.image.publicURL})` }}
       />
     <div className="post__content">
-      <div className="post__title">{post.frontmatter.title}</div>
+      <div className="post__title fancy-font">{post.frontmatter.title}</div>
       <div className="post__date">{post.frontmatter.date}</div>
       <div className="post__excerpt">{post.excerpt}</div>
     </div>
